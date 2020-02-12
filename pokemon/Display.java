@@ -7,6 +7,12 @@ public class Display extends pokemon{
     private static int curSP = 0 ;
     private static int curDMG = 0 ;
     private static String curName ;
+    
+    private static int curEmcode = 99 ;
+    private static int curEmHP = 0 ;
+    private static int curEmSP = 0 ;
+    private static int curEmDMG = 0 ;
+    private static String curEmName ;
 
     public static void MainMenu() {
         System.out.println("._____________________________________.");
@@ -49,6 +55,14 @@ public static int returnCode() {
     return code;
 }
     
+public static void Enime(){
+    curEmHP = Enime.getHpEnime();
+    curEmSP = Enime.getSpEnime();
+    curEmDMG = Enime.getDmgEnime();
+    curEmName = Enime.getNameEnime();
+    curcode = checkcode;
+}
+
 
 public static void Status(){
         if(checkcode == 0){
@@ -92,5 +106,85 @@ public static void Status(){
     }
     
     
+    public static void mainFight(){
+        int ComYes = 0;
+        Scanner EventPersonAct = new Scanner(System.in);
+        do{
+            System.out.println("._____________________________________.");
+            System.out.println("|\t  Do you want to fight              |");
+            System.out.println("|\t 1 : Yes                            |");
+            System.out.println("|\t 2 : Quiz                           |");
+            System.out.println("|_____________________________________|");
+            
+            ComYes = EventPersonAct.nextInt();
+            if(ComYes == 1){
+                System.out.println("|\t You are in FIGHT           |");
+              Enime();
+              displayEmSatus();
+                break;
+            }
+            
+        }while(ComYes != 2);
+        
+        
+    }
+    
+   
+    public static void displayEmSatus(){
+        System.out.println("._____________________________________.");
+        System.out.println("|\t      Enime POKEMON              |");
+        System.out.println("|\tEnime is "+ curEmName + "   |");
+        System.out.println("|\tHP Enime is "+ curEmHP + "  |");
+        System.out.println("|\tSP Enime is "+ curEmSP + "  |");
+        System.out.println("|\tDMG Enime is "+ curEmDMG + "|");
+        System.out.println("|_____________________________________|");
+    }
+   
+   
+    public static void mainAtk(){
+        int ComAck = 0;
+        int PokemonHP = curHP ;
+        int PokeDmg = curDMG ;
+        int EmHP = curEmHP ;
+        int EmDmg = curEmDMG ;
+        
+        
+        Scanner AttackEnime = new Scanner(System.in);
+        System.out.println("._____________________________________.");
+        System.out.println("|\t  1 : Attack              |");
+        System.out.println("|_____________________________________|");
+        ComAck = AttackEnime.nextInt();
+        if(ComAck == 1){
+            PokemonHP = hpWhileFight(EmDmg, PokemonHP);
+            EmHP = hpWhileFight(PokeDmg, EmHP);
+        }
+        
+        System.out.println("._____________________________________.");
+        System.out.println("|\t      Enime POKEMON              |");
+        System.out.println("|\tEnime is "+ curEmName + "   |");
+        System.out.println("|\tHP Enime is "+ EmHP + "  |");
+        System.out.println("|\tSP Enime is "+ curEmSP + "  |");
+        System.out.println("|\tDMG Enime is "+ curEmDMG + "|");
+        System.out.println("|_____________________________________|");
+
+        System.out.println("._____________________________________.");
+        System.out.println("|\t     Your Status POKEMON              |");
+        System.out.println("|\tYour Partner is "+ curName + "   |");
+        System.out.println("|\tYour HP Partner is "+ PokemonHP + "  |");
+        System.out.println("|\tYour SP Partner is "+ curSP + "  |");
+        System.out.println("|\tYour DMG Partner is "+ curDMG + "|");
+        System.out.println("|_____________________________________|");
+
+
+    }
+
+    
+
+
+	public static int hpWhileFight(int damage, int hp){
+        return hp - damage;
+    }
+
+	
 
 }

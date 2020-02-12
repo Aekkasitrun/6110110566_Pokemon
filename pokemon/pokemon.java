@@ -20,6 +20,9 @@ public class pokemon{
             Display.ChosePokemon();
             Display.Status();
             Display.displayPartSatus();
+            Display.mainFight();
+            //Display.displayEmSatus();
+            Display.mainAtk();
         
         }
     }while(ChoseCommand != 2);
