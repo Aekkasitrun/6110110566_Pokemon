@@ -13,7 +13,7 @@ public class Charmander extends FIRE {
         return codeName = "CHARMANDER";
     }
     public static int getCodeCharmander(){
-        return code = 2;
+        return code = 0;
     }
 
 }

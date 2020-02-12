@@ -18,6 +18,9 @@ public class pokemon{
         ChoseCommand = Command.nextInt();
         if(ChoseCommand == 1){
             Display.ChosePokemon();
+            Display.Status();
+            Display.displayPartSatus();
+        
         }
     }while(ChoseCommand != 2);
              
