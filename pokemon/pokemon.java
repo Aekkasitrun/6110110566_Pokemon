@@ -7,7 +7,7 @@ public class pokemon{
         System.out.println("Enter Your Name:");
         String NamePerson = InputPerson.next();
 
-        System.out.println("Your name is:" + NamePerson);
+        System.out.println("Hello " + NamePerson);
 
     }
 
