@@ -4,6 +4,7 @@ public class pokemon{
     public static void main(String[] args){
         Scanner InputPerson = new Scanner(System.in);
         Scanner Command = new Scanner(System.in);
+        
     //set name player
         System.out.println("Enter Your Name:");
         String NamePerson = InputPerson.next();
@@ -12,6 +13,7 @@ public class pokemon{
         
         int ChoseCommand = 0;
         int checkCode = 99;
+        int sum = 0;
         
     do{    
         Display.MainMenu ();
@@ -19,14 +21,17 @@ public class pokemon{
         if(ChoseCommand == 1){
             Display.ChosePokemon();
             Display.Status();
-            Display.displayPartSatus();
+            Display.displayPokemonSatus();
             Display.mainFight();
             //Display.displayEmSatus();
-            Display.mainAtk();
+            if(Display.notFight(sum) == 1){
+            
+                Display.mainAtk();
+            }
         
         }
     }while(ChoseCommand != 2);
-             
+    
        
 
     }

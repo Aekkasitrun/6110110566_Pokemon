@@ -11,7 +11,7 @@ public class Enime extends FIRE {
         return DAMAGE = 81;
     }
     public static String getNameEnime(){
-        return codeName = "ENIME";
+        return codeName = "Starmie";
     }
     public static int getCodeEnime(){
         return code = 2;
