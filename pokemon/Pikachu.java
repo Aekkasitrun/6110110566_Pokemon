@@ -1,7 +1,7 @@
 package pokemon;
 public class Pikachu extends ELEGTRIC {
     public static int getHpPikachu(){
-        return HP = 500;
+        return HP = 400;
     }
     public static int getSpPikachu(){
         return SP = 300;
